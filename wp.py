@@ -1,15 +1,13 @@
 import requests
 import json
 
-from config import white_key
-
 street_line_1 = '5912 cactus valley'
 city = 'Charlotte'
 postal_code = '28277'
 state_code='NC'
 base_target_url = 'https://proapi.whitepages.com/3.0/location'
-
 white_key="a4ef0bb2e2124bbfb532f9e9f1f3ffe9"
+
 
 params = {
     'street_line_1': street_line_1,
@@ -19,7 +17,7 @@ params = {
     'api_key':white_key
 }
 
-response = requests.get(base_target_url,params)
+response = requests.post(base_target_url,params=params,verify=False)
 
 print('response url is : ' + response.url)
 
